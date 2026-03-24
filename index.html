@@ -608,6 +608,7 @@ function initMap(){
 
   // San Andrés inset — solo la isla, proyección propia para que llene el recuadro
   const saEl=document.getElementById("sa-inset");
+  if(!document.getElementById("sa-svg")){const ns="http://www.w3.org/2000/svg";const el=document.createElementNS(ns,"svg");el.setAttribute("id","sa-svg");el.setAttribute("width","68");el.setAttribute("height","90");saEl.insertBefore(el,saEl.firstChild);}
   saEl.style.display="block";
   const svgSA=d3.select("#sa-svg");
   svgSA.selectAll("*").remove();
