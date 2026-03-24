@@ -551,7 +551,15 @@ function switchMapTab(tab){
     mainSvg.selectAll(".dep-layer").style("display",tab==="dep"?null:"none");
     mainSvg.selectAll(".eco-layer").style("display",tab==="eco"?null:"none");
   }
-  document.getElementById("sa-inset").style.display=tab==="dep"?"block":"none";
+  const saInsetEl = document.getElementById('sa-inset');
+if (!document.getElementById('sa-svg')) {
+  const newSvg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+  newSvg.setAttribute('id','sa-svg');
+  newSvg.setAttribute('width','68');
+  newSvg.setAttribute('height','90');
+  saInsetEl.insertBefore(newSvg, saInsetEl.firstChild);
+}
+saInsetEl.style.display='block';
 }
 
 function initMap(){
