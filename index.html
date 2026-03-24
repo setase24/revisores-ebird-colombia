@@ -4,8 +4,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Revisores eBird Colombia — Registro</title>
-<link href="./index_files/css2" rel="stylesheet">
-<script src="./index_files/d3.min.js.descarga"></script>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
 <style>
 :root{
   --bg:#f8f7f5;--surface:#ffffff;--surface2:#f2f1ef;--border:#e2e0db;--border-strong:#c8c5be;
@@ -555,9 +556,9 @@ function switchMapTab(tab){
 }
 
 function initMap(){
-  const mc=document.getElementById("map-container");
-  // Guard: remove any existing SVGs first (prevent duplicate runs)
+ const W=800,H=520;
   d3.select("#map-container").selectAll("svg").remove();
+  // Guard: remove any existing SVGs first (prevent duplicate runs)
   const W=800,H=520;
   mainSvg=d3.select("#map-container").append("svg")
     .attr("viewBox","0 0 800 520").attr("width","100%").attr("height","100%")
