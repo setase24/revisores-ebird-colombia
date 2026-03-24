@@ -610,25 +610,13 @@ function initMap(){
   const saEl=document.getElementById("sa-inset");
   saEl.style.display="block";
   const svgSA=d3.select("#sa-svg");
+  svgSA.selectAll("*").remove();
   const SW=68,SH=90;
   svgSA.attr("width",SW).attr("height",SH);
   svgSA.append("rect").attr("width",SW).attr("height",SH).attr("fill","#0f1e16");
   const projSA=d3.geoMercator().fitExtent([[4,4],[SW-4,SH-4]],SA_FEAT);
   const pathSA=d3.geoPath(projSA);
-  svgSA.append("path")
-    .datum(SA_FEAT)
-    .attr("class","depto-p sa-dep-p")
-    .attr("d",pathSA)
-    .attr("fill",fillDep(SA_FEAT.properties.name))
-    .attr("stroke","#0f1e16")
-    .attr("stroke-width",0.5)
-    .on("click",()=>geoToggle(SA_FEAT.properties.name,"dep"))
-    .on("mousemove",(e)=>{
-      const i=geoIdx(SA_FEAT.properties.name,"dep");
-      tt.innerHTML=`<b>SAN ANDRES Y PROVIDENCIA</b><span style="color:rgba(160,220,180,0.7);font-size:10px;display:block">${i>=0?`Prioridad ${i+1} · clic para quitar`:"Clic para seleccionar"}</span>`;
-      tt.style.display="block";mvTT(e);
-    })
-    .on("mouseleave",()=>{tt.style.display="none";});
+  svgSA.append("path").datum(SA_FEAT).attr("class","depto-p sa-dep-p").attr("d",pathSA).attr("fill","#4a7a60").attr("stroke","#0f1e16").attr("stroke-width",0.5).on("click",function(){geoToggle(SA_FEAT.properties.name,"dep");});
 }
 
 function singleChip(el,gid){document.querySelectorAll("#"+gid+" .chip").forEach(c=>c.classList.remove("on"));el.classList.add("on");}
