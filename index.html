@@ -690,6 +690,7 @@ function initMap(){
   const projSA=d3.geoMercator().fitExtent([[4,4],[SW-4,SH-4]],SA_FEAT);
   const pathSA=d3.geoPath(projSA);
   svgSA.append("path").datum(SA_FEAT).attr("class","depto-p sa-dep-p").attr("d",pathSA).attr("fill","#4a7a60").attr("stroke","#0f1e16").attr("stroke-width",0.5).on("click",function(){geoToggle(SA_FEAT.properties.name,"dep");});
+  tt.style.display="none";
 }
 
 function singleChip(el,gid){document.querySelectorAll("#"+gid+" .chip").forEach(c=>c.classList.remove("on"));el.classList.add("on");}
