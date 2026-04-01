@@ -786,6 +786,6 @@ const data={timestamp:new Date().toLocaleString("es-CO"),nombre:document.getElem
 }
 
 window.
-document.addEventListener("DOMContentLoaded", function(){ setTimeout(initMap, 100); });
+document.addEventListener("DOMContentLoaded", function(){ setTimeout(function(){ initMap(); switchMapTab('dep'); }, 100); });
 </script>
 </body></html>
