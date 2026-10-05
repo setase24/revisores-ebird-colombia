@@ -87,7 +87,7 @@ Formulario (GitHub Pages)
 Desarrollado por **Sebastián Tabares Segovia**  
 Biólogo y estudiante de Estadística · Universidad Nacional de Colombia
 
-Foto del héroe: *Poecilotriccus palmeri* © Sebastián Tabares Segovia
+Foto: *Poecilotriccus palmeri* © Sebastián Tabares Segovia
 
 ---
 
